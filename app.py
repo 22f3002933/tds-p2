@@ -198,5 +198,5 @@ async def api(question: Annotated[str, Form()], file: UploadFile | None = None):
     return { "answer": answer }
 
 if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run("app:app", host="0.0.0.0", port=8080, reload=True)
+    port = int(os.getenv("PORT", 8080))
+    uvicorn.run("app:app",host="0.0.0.0", port=8080)
