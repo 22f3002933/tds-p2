@@ -177,7 +177,7 @@ async def solver(match_ques_id: str):
 
             answer = f"data:{mime_type};base64,{answer}"
 
-    return answer
+    return f"{answer}"
 
 @app.post("/api")
 async def api(question: Annotated[str, Form()], file: UploadFile | None = None):
